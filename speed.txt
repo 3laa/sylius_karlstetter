@@ -1,0 +1,9 @@
+symfony serve:start
+symfony serve:stop
+php bin/console debug:router
+php bin/console cache:clear
+php bin/console cache:pool:clear cache.app_clearer
+bin/console sylius:theme:assets:install
+
+php bin/console debug:container --parameter=sylius.model.country.class
+php bin/console debug:container sylius.form.type.country
